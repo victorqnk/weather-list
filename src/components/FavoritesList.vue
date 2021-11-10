@@ -2,8 +2,9 @@
   <table class="table-auto border-separate border border-grey-800 mt-5">
     <thead>
       <tr>
-        <th class="border border-grey-800 px-5">Ciudad</th>
-        <th class="border border-grey-800 px-5">Favorito</th>
+        <th class="border border-grey-800 px-5">City</th>
+        <th class="border border-grey-800 px-5">Weather</th>
+        <th class="border border-grey-800 px-5">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -33,13 +34,9 @@ export default {
       for(let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         let item = window.localStorage.getItem(key)
-        this.items.push({'id': key, 'name': item})
+        this.items.push(JSON.parse(item))
       }
     }
   }
 }
 </script>
-
-<style>
-
-</style>

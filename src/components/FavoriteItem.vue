@@ -1,8 +1,9 @@
 <template>
   <tr>
-    <td class="text-center">{{ city.name }}</td>
+    <td>{{ city.name }}</td>
+    <td class="text-center font-bold">{{ city.temp }}°</td>
     <td class="text-center">
-      <button class="text-red-400 text-sm" @click="removeFavorite">Quitar</button>
+      <button class="text-red-400 text-sm" @click="removeFavorite">Remove</button>
     </td>
   </tr>
 </template>
@@ -23,7 +24,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

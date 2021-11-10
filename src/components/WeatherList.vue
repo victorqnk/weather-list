@@ -2,9 +2,9 @@
   <table class="table-auto border-separate border border-grey-800 mt-5">
     <thead>
       <tr>
-        <th class="border border-grey-800 px-5">Ciudad</th>
-        <th class="border border-grey-800 px-5">Temperatura</th>
-        <th class="border border-grey-800 px-5">Favorito</th>
+        <th class="border border-grey-800 px-5">City</th>
+        <th class="border border-grey-800 px-5">Weather</th>
+        <th class="border border-grey-800 px-5">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +35,8 @@ export default {
       return window.localStorage.getItem(id) != null ? true : false
     },
     addFavorite(city) {
-      window.localStorage.setItem(city.id, city.name)
+      let data = JSON.stringify({'id':city.id, 'temp':city.main.temp, 'name':city.name })
+      window.localStorage.setItem(city.id, data)
       this.loadAPI()
     },
     loadAPI() {
